@@ -1,0 +1,18 @@
+{
+  "groups": [
+    {
+      "name": "bill.data",
+      "type": "com.app.billmanager.configuration.BillProps",
+      "sourceType": "com.app.billmanager.configuration.BillProps"
+    }
+  ],
+  "properties": [
+    {
+      "name": "bill.data.page-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.app.billmanager.configuration.BillProps",
+      "defaultValue": 8
+    }
+  ],
+  "hints": []
+}

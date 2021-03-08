@@ -1,0 +1,494 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: whitesmoke;
+}
+
+#container {
+    margin-top: 3em;
+    margin-bottom: 0.5em;
+
+    height: 100vh;
+    width: 100%;
+    min-height: 400px;
+
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url("../img/calculator-1044172_1920.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    position: relative;
+}
+
+#insert-content {
+    z-index: 1;
+    text-align: center;
+}
+
+#insert-content button {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+#image-overlay {
+    height: 100vh;
+    width: 100%;
+    min-height: 400px;
+    background-color: #000;
+    opacity: 0.8;
+    position: absolute;
+}
+
+.caption {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-variant-caps: all-petite-caps;
+    color: #fff;
+    z-index: 1;
+}
+
+.caption2 {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: #fff;
+    z-index: 1;
+}
+
+#second-segment {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 5em;
+}
+
+#second-segment > div {
+    width: 80%;
+}
+
+.segment-title {
+    margin-top: 5em;
+    margin-bottom: 5em;
+    text-align: center;
+}
+
+.segment-title p {
+    font-variant-caps: all-petite-caps;
+    color: #006DFF;
+}
+
+.segment-title h1 {
+    display: inline-block;
+    position: relative;
+}
+
+.segment-title h1:after {
+    content: "";
+    height: 2px;
+    width: 50%;
+    background-color: #006DFF;
+    position: absolute;
+    bottom: -.5em;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.fancy-line {
+    border: 0;
+    height: 1px;
+    position: relative;
+    margin: 0.5em 0;
+}
+
+.fancy-line:before {
+    top: -0.5em;
+    height: 1em;
+}
+
+.fancy-line:after {
+    height: 0.5em;
+    top: calc(-0.5em + 1px);
+}
+
+.fancy-line:before, .fancy-line:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+}
+
+.fancy-line, .fancy-line:before {
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 75%);
+}
+
+body, .fancy-line:after {
+    background: #f4f4f4;
+}
+
+.space {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.icon-circle {
+    background-color: whitesmoke;
+    border-radius: 40%;
+    border: 1px solid grey;
+    padding: 20px;
+}
+
+#second-segment h2 {
+    padding-bottom: 1em;
+}
+
+#second-segment p {
+    padding-bottom: 2em;
+}
+
+
+.parallax {
+    margin-top: 0.5em;
+    background-image: url("../img/tax-468440_1920.jpg");
+
+    height: 1000px;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+}
+
+@media only screen and (max-width: 768px) {
+    .parallax {
+        background-attachment: local;
+        height: 100vh;
+    }
+}
+
+#hand-img {
+    background-image: url("../img/bookkeeping-615384_1920.jpg");
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    border-radius: 3%;
+
+    height: 100%;
+    width: 100%;
+}
+
+#side-list {
+    padding-top: 10%;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    justify-content: center;
+}
+
+#side-list > li {
+    padding-bottom: 10%;
+    padding-left: 20%;
+    padding-right: 10%;
+}
+
+#side-list h2 {
+    font-family: sans-serif;
+}
+
+@media only screen and (max-width: 1190px) {
+    #side-list > li {
+        padding-left: 0%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #side-list > li {
+        padding-left: 0;
+        padding-right: 20px;
+    }
+
+    #hand-img {
+        height: 100vh;
+    }
+}
+
+#side-list .merge-content {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#side-list .content-info {
+    margin-left: 35px;
+}
+
+.parallax2 {
+    margin-top: 0.5em;
+    background-image: url("../img/income-tax-4097292_1920.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 1000px;
+}
+
+@media only screen and (max-width: 768px) {
+    .parallax2 {
+        display: none;
+    }
+
+    #parallax2-line {
+        display: none;
+    }
+}
+
+
+.col-center {
+    margin: 0 auto;
+    float: none !important;
+}
+
+.carousel {
+    margin: 50px auto;
+    padding: 0 70px;
+}
+
+.carousel-item {
+    color: #999;
+    font-size: 14px;
+    text-align: center;
+    overflow: hidden;
+    min-height: 290px;
+}
+
+.carousel .item .img-box {
+    width: 135px;
+    height: 135px;
+    margin: 0 auto;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+}
+
+.carousel .img-box img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 50%;
+}
+
+.carousel .testimonial {
+    padding: 30px 0 10px;
+}
+
+.carousel .overview {
+    font-style: italic;
+}
+
+.carousel .overview b {
+    text-transform: uppercase;
+    color: #006DFF;
+}
+
+.carousel .carousel-control {
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    top: 50%;
+    background: none;
+}
+
+.carousel-control i {
+    font-size: 68px;
+    line-height: 42px;
+    position: absolute;
+    display: inline-block;
+    color: rgba(0, 0, 0, 0.8);
+    text-shadow: 0 3px 3px #e6e6e6, 0 0 0 #000;
+}
+
+.carousel .carousel-indicators {
+    bottom: -40px;
+}
+
+.carousel-indicators li, .carousel-indicators li.active {
+    width: 10px;
+    height: 10px;
+    margin: 1px 3px;
+    border-radius: 50%;
+}
+
+.carousel-indicators li {
+    background: #999;
+    border-color: transparent;
+    box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-indicators li.active {
+    background: #555;
+    box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.parallax3 {
+    margin-top: 0.5em;
+    background-image: url("../img/calculator-385506_1920.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 1000px;
+    position: relative;
+}
+
+@media only screen and (max-width: 768px) {
+    .parallax3 {
+        background-attachment: local;
+        height: 100vh;
+    }
+}
+
+footer {
+    height: 40em;
+    background-color: rgb(52, 58, 62);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+    footer {
+        height: 50em;
+    }
+}
+
+footer a {
+    color: grey;
+    text-decoration: none;
+}
+
+
+footer a:link {
+    text-decoration: none;
+}
+
+footer a:visited {
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: none;
+    color: #006DFF;
+}
+
+footer a:active {
+    text-decoration: none;
+}
+
+footer h5 {
+    color: white;
+}
+
+
+ul.social-network {
+    list-style: none;
+    display: inline;
+    margin-left: 0 !important;
+    padding: 0;
+}
+
+ul.social-network li {
+    display: inline;
+    margin: 0 5px;
+}
+
+.social-network a.icoRss:hover {
+    background-color: #F56505;
+}
+
+.social-network a.icoFacebook:hover {
+    background-color: #3B5998;
+}
+
+.social-network a.icoTwitter:hover {
+    background-color: #33ccff;
+}
+
+.social-network a.icoGithub:hover {
+    background-color: black;
+}
+
+.social-network a.icoLinkedin:hover {
+    background-color: #007bb7;
+}
+
+.social-network a.icoRss:hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i,
+.social-network a.icoGoogle:hover i, .social-network a.icoLinkedin:hover i {
+    color: #fff;
+}
+
+a.socialIcon:hover, .socialHoverClass {
+    color: #44BCDD;
+}
+
+.social-circle li a {
+    display: inline-block;
+    position: relative;
+    margin: 0 auto 0 auto;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+}
+
+.social-circle li i {
+    margin: 0;
+    line-height: 50px;
+    text-align: center;
+}
+
+.social-circle li a:hover i, .triggeredHover {
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -ms--transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.social-circle i {
+    color: #fff;
+    -webkit-transition: all 0.8s;
+    -moz-transition: all 0.8s;
+    -o-transition: all 0.8s;
+    -ms-transition: all 0.8s;
+    transition: all 0.8s;
+}
+
+.footer-copyright {
+    color: #fff;
+}
+
+footer hr {
+    color: white;
+    background-color: gray;
+}
+
+

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<header>
+    <nav id="nav" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">
+            <svg width="30px" height="30px" viewBox="0 0 20 19" class="bi bi-credit-card-2-front" fill="currentColor"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                      d="M14 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z"/>
+                <path d="M2 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1z"/>
+                <path fill-rule="evenodd"
+                      d="M2 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+            MIBI
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/features">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/donate">Donate</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-box-arrow-in-right"
+                             fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
+                            <path fill-rule="evenodd"
+                                  d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                        </svg>
+                        Log in
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/signup/create-account">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                        </svg>
+                        Sign up
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<main>
+    <div id="container">
+        <div id="insert-content">
+            <h1 class="caption">Web based bill manager</h1>
+            <button id="experience" type="button" class="btn btn-primary btn-lg">Experience now</button>
+            <p class="caption2">Already have an account? <a href="/login">Log in</a></p>
+        </div>
+        <div id="image-overlay"></div>
+    </div>
+    <div class="fancy-line"></div>
+
+    <div class="segment-title">
+        <p>Turn your bill managment into</p>
+        <h1>An Immense Advantage</h1>
+        <div class="underline"></div>
+    </div>
+
+    <div id="second-segment" class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>
+                    <img class="icon-circle" src="/img/cloud.svg" alt="cloud">
+                </h2>
+                <p>
+                    From today, stop writing everything down on cards and switch to a more convenient form of recording
+                    expenses. After the first month you will feel the change for the better.
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h2>
+                    <img class="icon-circle" src="/img/dollar-sign.svg" alt="dollar">
+                </h2>
+                <p>
+                    Determine your monthly expenses. Thanks to the mibi application, you will be able to see how much
+                    you spend on average per month. It may turn out that you will be deeply shocked.
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h2>
+                    <img class="icon-circle" src="/img/coffee.svg" alt="coffee">
+                </h2>
+                <p>
+                    Automatic calculation of monthly and annual expenses will save you time. Additionally, thanks to
+                    data visualization, you will be able to quickly guess in which segment of your life you spend the
+                    most.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="fancy-line"></div>
+
+    <div class="parallax"></div>
+
+    <div class="third-segment">
+
+        <div class="fancy-line"></div>
+
+        <div class="segment-title">
+            <p>You deserve</p>
+            <h1>Something More Convenient</h1>
+            <div class="underline"></div>
+
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <ul id="side-list">
+                        <li>
+                            <div class="merge-content">
+                                <div class="content-conteiner">
+                                    <img class="icon-circle" src="/img/rocket-outline (1).svg" alt="rocket">
+                                </div>
+                                <div class="content-info">
+                                    <h2>Power of bills visualization</h2>
+                                    <p>Turn your browser into a fully professional station for managing your accounts.
+                                        Browse and analyze at every level. Use pictures instead of manual data
+                                        entry.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="merge-content">
+                                <div class="content-conteiner">
+                                    <img class="icon-circle" src="/img/checkmark-outline.svg" alt="checkmark">
+                                </div>
+                                <div class="content-info">
+                                    <h2>Application availability</h2>
+                                    <p>It's like Google Docs for accounting. Create, share, access your expenses
+                                        anytime, anywhere.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="merge-content">
+                                <div class="content-conteiner">
+                                    <img class="icon-circle" src="/img/save-outline.svg" alt="save">
+                                </div>
+                                <div class="content-info">
+                                    <h2>Application swap</h2>
+                                    <p>Already using a similar application? Do not be afraid and write to us! We
+                                        guarantee assistance in data transfer and we offer a guide that will quickly
+                                        familiarize you with the product.</p>
+                                </div>
+                            </div>
+
+                        </li>
+                    </ul>
+                </div>
+                <div id="img-container" class="col-md-6">
+                    <div id="hand-img"></div>
+                </div>
+            </div>
+        </div>
+        <div class="fancy-line"></div>
+    </div>
+
+    <div id="xd" class="parallax2"></div>
+
+    <div id="parallax2-line" class="fancy-line"></div>
+
+    <div class="segment-title">
+        <p>You will love it</p>
+        <h1>Read Our Testemonials</h1>
+        <div class="underline"></div>
+    </div>
+
+    <div id="testemonials-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-center m-auto">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Carousel -->
+                        <div class="carousel-inner">
+                            <div class="item carousel-item active">
+                                <div class="img-box"><img src="https://i.ibb.co/d5DY64w/img1.jpg" alt=""></div>
+                                <p class="testimonial">I just wanted to share a quick note and let you know that you
+                                    guys do a really good job. I’m glad I decided to work with you. It’s really great
+                                    how easy your websites are. I never have any problem at all. Thanks, guys!</p>
+                                <p class="overview"><b>Aleksandra Sikorska</b>, Office Worker</p>
+                            </div>
+                            <div class="item carousel-item">
+                                <div class="img-box"><img src="https://i.ibb.co/5FF1vqz/img2.jpg" alt=""></div>
+                                <p class="testimonial">Vestibulum quis quam ut magna consequat faucibus. Pellentesque
+                                    eget nisi a mi suscipit tincidunt. Utmtc tempus dictum risus. Pellentesque viverra
+                                    sagittis quam at mattis. Suspendisse potenti. Aliquam sit amet gravida nibh,
+                                    facilisis gravida odio.</p>
+                                <p class="overview"><b>Dauglas McNun</b>, Financial Advisor</p>
+                            </div>
+                            <div class="item carousel-item">
+                                <div class="img-box"><img src="https://i.ibb.co/Trv7hDv/img3.jpg" alt=""></div>
+                                <p class="testimonial">Phasellus vitae suscipit justo. Mauris pharetra feugiat ante id
+                                    lacinia. Etiam faucibus mauris id tempor egestas. Duis luctus turpis at accumsan
+                                    tincidunt. Phasellus risus risus, volutpat vel tellus ac, tincidunt fringilla massa.
+                                    Etiam hendrerit dolor eget rutrum.</p>
+                                <p class="overview"><b>Hellen Wright</b>, Athelete</p>
+                            </div>
+                        </div>
+                        <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                        <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fancy-line"></div>
+
+    <div class="parallax3"></div>
+
+</main>
+
+<footer class="page-footer pt-5">
+
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-4 mx-auto">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a href="#container">Home</a></li>
+                    <li><a href="/features">Features</a></li>
+                    <li><a href="/donate">Donate</a></li>
+                    <li><a href="/login">Log in</a></li>
+                    <li><a href="/signup/create-account">Sign up</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 mx-auto">
+                <h5>Support</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a href="https://krystiannakielski2.wixsite.com/mibi-forum">Forum</a></li>
+                    <li><a href="https://krystiannakielski2.wixsite.com/mibi-forum/forum/_news">News</a></li>
+                    <li><a href="https://krystiannakielski2.wixsite.com/mibi-forum/forum/jobs-and-employment">Jobs and Employment</a></li>
+                    <li><a href="https://krystiannakielski2.wixsite.com/mibi-forum/forum/support">Support</a></li>
+                    <li><a href="https://krystiannakielski2.wixsite.com/mibi-forum/forum/mibi-fundation">Mibi Fundation</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 mx-auto">
+                <h5>About</h5>
+                <ul class="list-unstyled text-small">
+                    <li><a href="/team">Team</a></li>
+                    <li><a href="/localization">Localization</a></li>
+                    <li><a href="/privacy">Privacy</a></li>
+                    <li><a href="/terms">Terms</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Social buttons -->
+
+        <div class="col-md-12 text-center">
+            <ul class="list-unstyled social-network social-circle">
+                <li class="list-inline-item">
+                    <a class="icoFacebook" href="https://www.facebook.com">
+                        <i class="fa fa-facebook-f"> </i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="icoTwitter" href="https://www.twitter.com">
+                        <i class="fa fa-twitter"> </i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="icoGithub" href="https://github.com/KryNak">
+                        <i class="fa fa-github"> </i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="icoLinkedin" href="https://www.linkedin.com">
+                        <i class="fa fa-linkedin"> </i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="icoRss" href="https://www.rssboard.org">
+                        <i class="fa fa-rss"> </i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="/"> MIBI.com</a>
+        </div>
+        <!-- Copyright -->
+
+    </div>
+
+</footer>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        html, body{
+            height: 100%;
+        }
+        .parent{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .err{
+            padding-top: 2em;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- NAV -->
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="/registration">Registration</a>
+        </li>
+    </ul>
+
+    <div class="parent">
+        <form class="sign-up-form d-flex justify-content-center" th:action="@{/registration}" onsubmit="return validate()" method="post">
+            <table>
+                <tbody>
+                <tr>
+                    <td colspan="2" style="text-align: center">
+                        <h3 style="padding-bottom: 1.0em">Register</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label class="col-sm-2 col-form-label" for="sign-up-username-area">Username</label></td>
+                    <td>
+                        <div class="input-group mb-2 mr-sm-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">👤</div>
+                            </div>
+                            <input name="username" id="sign-up-username-area" class="form-control" type="text" placeholder="username">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label class="col-sm-2 col-form-label" for="sign-up-password-area">Password</label></td>
+                    <td>
+                        <div class="input-group mb-2 mr-sm-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">🔒</div>
+                            </div>
+                            <input name ="password" id="sign-up-password-area" class="sign-up-password-area form-control" type="password" placeholder="password">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label class="col-sm-2 col-form-label" for="sign-up-confirm-password-area">Confirm password</label></td>
+                    <td>
+                        <div class="input-group mb-2 mr-sm-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">🔒</div>
+                            </div>
+                            <input id="sign-up-confirm-password-area" class="sign-up-confirm-password-area form-control" type="password" placeholder="confirm password">
+                        </div>
+                    </td>
+                </tr>
+                <tr style="text-align: center">
+                    <td colspan="2"><input id ="register-button" class="btn btn-primary" type="submit" value="register" onclick="validate()"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center" class="err">
+                        <div class="alert alert-danger" role="alert" th:if="${errorMessage}">
+                            <div th:text="${errorMessage}"></div>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    function validate(){
+
+        const pass = document.getElementById("sign-up-password-area").value;
+        const passConf = document.getElementById("sign-up-confirm-password-area").value;
+
+        if(pass !== passConf){
+            alert("Passwords do not match");
+            return false;
+        }
+
+        return true;
+    }
+</script>
+</html>

@@ -1,0 +1,62 @@
+bill:
+  data:
+    page-size: 8
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  mail:
+    host: localhost
+    port: 1025
+    username: user
+    password: 12345
+    properties:
+      mail:
+        smtp:
+          ssl:
+            trust: "*"
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000
+  h2:
+    console:
+      enabled: true
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 306938785902-q2sqt6m2d4lq7bol29lpproghgpa3egt.apps.googleusercontent.com
+            client-secret: 4Z4UWu3Ei6n0W0hYtb-GxbFh
+            access-token-uri: https://oauth2.googleapis.com/token
+            user-authorization-uri: https://accounts.google.com/o/oauth2/v2/auth
+            user-info-uri: https://openidconnect.googleapis.com/v1/userinfo
+            scope:
+              - email
+              - profile
+              - openid
+
+          facebook:
+            client-id: 303674360675311
+            client-secret: 011e7766578fdfeae611c7c95e8e5a37
+            scope:
+              - email
+
+          github:
+            client-id: 1f704d8537511f2d8bef
+            client-secret: 65569314dcebd0ad465b64b7d810a0576d206159
+            access-token-uri: https://github.com/login/oauth/access_token
+            user-authorization-uri: https://github.com/login/oauth/authorize
+            user-info-uri: https://api.github.com/user
+            scope:
+              - email
+
+

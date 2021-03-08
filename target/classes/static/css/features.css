@@ -1,0 +1,204 @@
+html, body{
+    height: 100vh;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    background: #dfe7e9;
+}
+header
+{
+    flex: 0 0 auto; /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
+}
+
+main
+{
+    /* With flex-grow set to 1, the main part will take up all free space */
+    flex: 1 0 auto; /* 1 flex-grow, 0 flex-shrink, auto flex-basis */
+}
+
+footer
+{
+    flex: 0 0 auto; /* 1 flex-grow, 0 flex-shrink, auto flex-basis */
+}
+
+.fa-spin {
+    -webkit-animation: fa-spin 2s infinite linear;
+    animation: fa-spin 2s infinite linear; }
+
+.fa-pulse {
+    -webkit-animation: fa-spin 1s infinite steps(8);
+    animation: fa-spin 1s infinite steps(8); }
+
+@-webkit-keyframes fa-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg); }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg); } }
+
+@keyframes fa-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg); }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg); } }
+
+#container:before{
+    position: absolute;
+    left: 8px;
+    top: 100px;
+    background-image: url(http://t.commonsupport.com/adro/images/icons/ring-circle.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 701px;
+    height: 756px;
+    content: "";
+    -webkit-animation: fa-spin 25s infinite alternate;
+    -moz-animation: fa-spin 25s infinite alternate;
+    -ms-animation: fa-spin 25s infinite alternate;
+    -o-animation: fa-spin 25s infinite alternate;
+    animation: fa-spin 25s infinite alternate;
+}
+
+.inbox{
+    position: relative;
+}
+
+#mibi-image{
+    width: 800px;
+    height: 600px;
+    background-image: url("../img/mibi.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 0 4px black;
+}
+
+#box{
+    width: 100%;
+    height: 1000px;
+    display: flex;
+}
+
+#left-column{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#left-column > ol{
+    margin: 0;
+    width: 80%;
+}
+
+#left-column > ol > li{
+    margin-left: 0;
+    list-style: none;
+    background-color: white;
+    box-shadow: 0 0 5px black;
+    padding: 30px;
+    border-radius: 2px;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    opacity: 90%;
+}
+
+#left-column > ol > li > img{
+    margin-left: 0;
+    display: inline-block;
+    vertical-align: top;
+    width: 45px;
+    height: 35px;
+}
+
+.card-right{
+    display: inline-block;
+    width: 85%;
+}
+
+#right-column{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+}
+
+@media screen and (max-width: 1590px){
+    #box{
+        height: 1400px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #box{
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        height: 1900px;
+    }
+
+    #left-column{
+        width: 100%;
+        height: 1200px;
+        margin: 0;
+    }
+
+    #right-column{
+        margin: 0;
+        width: 100%;
+        height: 600px;
+    }
+
+    #container:before{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 578px){
+    #box{
+        height: 2200px;
+    }
+    #left-column{
+        height: 1400px;
+    }
+    #right-column{
+        height: 700px;
+    }
+}
+
+.footer-copyright {
+    height: 60px;
+    background-color: rgb(52, 58, 64);
+    color: white;
+}
+
+.footer-copyright a {
+    color: grey;
+    text-decoration: none;
+}
+
+
+.footer-copyright a:link {
+    text-decoration: none;
+}
+
+.footer-copyright a:visited {
+    text-decoration: none;
+}
+
+.footer-copyright a:hover {
+    text-decoration: none;
+    color: #006DFF;
+}
+
+.footer-copyright a:active {
+    text-decoration: none;
+}

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <title>App</title>
+    <link rel="stylesheet" th:href="@{/css/materialize.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/data.css}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+<header>
+    <nav class="nav-extended">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">MIBI</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul id="#" class="right hide-on-med-and-down">
+                <li><a href="#"><i class="material-icons left">person_outline</i><span th:text="${name}"></span></a>
+                </li>
+                <li><a th:href="@{/logout}"><i class="material-icons left">power_settings_new</i>Logout</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="#"><i class="material-icons left">person_outline</i><span th:text="${name}"></span></a>
+                </li>
+                <li><a href="#"><i class="material-icons">textsms</i>Notification</a></li>
+                <li><a th:href="@{/logout}"><i class="material-icons left">power_settings_new</i>Logout</a></li>
+            </ul>
+        </div>
+        <div class="nav-content">
+            <ul class="tabs tabs-transparent">
+                <li class="tab"><a href="#c1"><i class="material-icons left">description</i>Journal</a></li>
+                <li class="tab"><a onclick="changeToRegister()" href="#c2"><i class="material-icons right">insert_chart</i>Registry</a></li>
+            </ul>
+            <a id="notification" class="btn-floating btn-large halfway-fab waves-effect waves-light blue">
+                <i class="material-icons">textsms</i>
+            </a>
+        </div>
+    </nav>
+</header>
+
+
+<main>
+    <div id="c1" class="col s12">
+        <div id="middle-section" class="container">
+            <div class="card hoverable">
+                <div class="card-content colored-part">
+                    <div>
+                        <div class="row valign-wrapper">
+                            <div class="col" style="margin-left: 0;"><a
+                                    class="btn-large waves-effect waves-light blue pulse modal-trigger" href="#modal1">ADD<i
+                                    class="material-icons right">add</i></a></div>
+                            <div class="input-field col s3">
+                                <i class="material-icons prefix white-text">search</i>
+                                <input id="datepicker-id" type="date" class="datepicker white-text">
+                                <label for="datepicker-id" class="white-text">Pick date</label>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card-content" style="border-color: white">
+                    <table id="table" class="table highlight centered bordered">
+
+                        <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="bill: ${bills}">
+                            <td>
+                                <div th:text="${bill.getTitle()}"></div>
+                            </td>
+                            <td>
+                                <div class="price" th:text="${bill.getPrice()}"></div>
+                            </td>
+                            <td>
+
+                                <a th:href="@{/api/delete(date=${bill.getDate()},id=${bill.getId()},pageNo=${currentPage},chartNo=${currentChartNo})}"
+                                   class="btn-floating btn-medium waves-effect waves-light red">
+                                    <i class="material-icons">delete</i>
+                                </a>
+
+                                <a id="edit-button"
+                                   class="btn-floating btn-medium waves-effect waves-light orange modal-trigger"
+                                   th:onclick="getData('[[${bill.getId()}]]')"
+                                   href="#modal2">
+                                    <i class="material-icons">edit</i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                    <ul th:if="${totalPages > 0}" class="pagination left-align">
+                        <li th:if="${currentPage <= 1}" class="disabled"><a><i
+                                class="material-icons">chevron_left</i></a></li>
+                        <li th:unless="${currentPage <= 1}" class="waves-effect"><a
+                                th:href="@{/api(date=${currentDate}, pageNo=${currentPage - 1}, chartNo=${currentChartNo})}"><i
+                                class="material-icons">chevron_left</i></a></li>
+                        <li th:each="i: ${#numbers.sequence(1, totalPages)}">
+                            <a class="waves-effect" th:if="${currentPage != i}"
+                               th:href="@{/api(date=${currentDate}, pageNo=${i}, chartNo=${currentChartNo})}">[[${i}]]</a>
+                            <a class="act" th:unless="${currentPage != i}">[[${i}]]</a>
+                        </li>
+                        <li th:if="${currentPage < totalPages}" class="waves-effect"><a
+                                th:href="@{/api(date=${currentDate}, pageNo=${currentPage + 1}, chartNo=${currentChartNo})}"><i
+                                class="material-icons">chevron_right</i></a></li>
+                        <li th:unless="${currentPage < totalPages}" class="disabled"><a><i class="material-icons">chevron_right</i></a>
+                        </li>
+                    </ul>
+
+                    <div id="pag">
+
+                    </div>
+
+                    <!-- MODALS -->
+
+                    <!-- ADD -->
+                    <form id="add-form" th:method="post"
+                          th:action="@{/api/add(cDate=${currentDate}, pageNo=${currentPage}, chartNo=${currentChartNo})}"></form>
+                    <div id="modal1" class="modal modal-fixed-footer" style="max-width: 800px; max-height: 500px">
+                        <div class="modal-content">
+
+                            <h4 style="height: 20%">Add Bill</h4>
+
+                            <div style="height: 75%; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center">
+
+                                <div class="card hoverable" style="width: 75%">
+                                    <div class="card-content">
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input form="add-form" th:field="${postBillModel.title}"
+                                                       placeholder="Title" id="add-title" type="text" class="validate">
+                                                <label for="add-title">Title</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input form="add-form" th:field="${postBillModel.price}"
+                                                       placeholder="Price" id="add-price" type="text" class="validate">
+                                                <label for="add-price">Price</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s12 left-align">
+                                                <input form="add-form" type="submit" class="btn" value="ADD">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- PUT -->
+                    <form id="put-form" th:method="post"
+                          th:action="@{/api/add(cDate=${currentDate}, pageNo=${currentPage}, chartNo=${currentChartNo})}"></form>
+                    <div id="modal2" class="modal modal-fixed-footer" style="max-width: 800px; max-height: 500px">
+                        <div class="modal-content">
+
+                            <h4 style="height: 20%">Update Bill</h4>
+
+                            <div style="height: 75%; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center">
+
+
+                                <div class="card hoverable" style="width: 75%">
+                                    <div class="card-content">
+                                        <div style="display: none">
+                                            <input form="put-form" th:name="id" th:field="${postBillModel.id}"
+                                                   id="put-id">
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input form="put-form" placeholder="Title" id="put-title" type="text"
+                                                       class="validate" th:name="title"
+                                                       th:field="${postBillModel.title}">
+                                                <label for="put-title">Title</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input form="put-form" placeholder="Price" id="put-price" type="text"
+                                                       class="validate" th:name="price"
+                                                       th:field="${postBillModel.price}">
+                                                <label for="put-price">Price</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s12 left-align">
+                                                <input form="put-form" type="submit" class="btn" value="EDIT">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content colored-part">
+                    <div class="row" style="margin-bottom: 0;">
+                        <div class="col s5 push-s7 right-align">
+                            <h6 class="white-text">Total Amount</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s5 push-s7 right-align">
+                            <h2 id="counter" class="white-text" style="margin-top: 0; margin-bottom: 0;">
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="c2" class="col s12">
+        <div class="card-panel hoverable" id="chartBox">
+            <div>
+                <button class="waves-effect waves-light blue btn" onclick="prevChartNo()"><i class="material-icons left">arrow_back</i>previous</button>
+                <button class="waves-effect waves-light blue btn" onclick="nextChartNo()"><i class="material-icons right">arrow_forward</i>next</button>
+            </div>
+            <div id="chartContainer"></div>
+        </div>
+    </div>
+
+</main>
+
+<footer class="page-footer">
+    <div class="row">
+        <div class="col s12 center-align">© 2020 Copyright MIBI</div>
+    </div>
+</footer>
+<script th:src="@{/js/materialize.js}"></script>
+<script th:src="@{/js/data.js}"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script th:inline="javascript" type="text/javascript">
+    google.charts.load("visualization", "1", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([[${chartData}]]);
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0, 1,
+            { calc: "stringify",
+                sourceColumn: 1,
+                type: "string",
+                role: "annotation" },
+            2]);
+
+        var options = {
+            title: `Week balance: [${[[${chartRange}]]}]`,
+            bar: {groupWidth: "95%"},
+            legend: { position: "none" },
+            animation:{
+                startup: true,
+                duration: 2000,
+                easing: 'out', },
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById("chartContainer"));
+        chart.draw(view, options);
+    }
+
+    $(window).resize(function(){
+        drawChart();
+    });
+
+    function changeToRegister() {
+        const pathname = window.location.pathname;
+        const queriesParams = new URLSearchParams({date: [[${currentDate}]], pageNo: [[${currentPage}]], chartNo: [[${currentChartNo}]]});
+        const url = `${pathname}?${queriesParams.toString()}#c2`;
+        window.location.href = url;
+        window.location.reload();
+    }
+</script>
+</body>
+
+</html>

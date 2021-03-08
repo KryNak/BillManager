@@ -1,0 +1,16 @@
+html, body {
+    height: 100%;
+}
+
+.date-picker-parent {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.date-picker-child {
+    display: flex;
+    width: 25%;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}

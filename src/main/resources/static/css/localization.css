@@ -1,0 +1,64 @@
+html, body{
+    height: 100vh;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    background: #dfe7e9;
+}
+header
+{
+    flex: 0 0 auto;
+}
+
+main
+{
+    flex: 1 0 auto;
+}
+
+footer
+{
+    flex: 0 0 auto;
+}
+
+.footer-copyright {
+    height: 60px;
+    background-color: rgb(52, 58, 64);
+    color: white;
+}
+
+.footer-copyright a {
+    color: grey;
+    text-decoration: none;
+}
+
+
+.footer-copyright a:link {
+    text-decoration: none;
+}
+
+.footer-copyright a:visited {
+    text-decoration: none;
+}
+
+.footer-copyright a:hover {
+    text-decoration: none;
+    color: #006DFF;
+}
+
+.footer-copyright a:active {
+    text-decoration: none;
+}
+
+#mapid {
+    height: 60vh;
+    width: 90vh;
+    min-width: 480px;
+    min-height: 300px;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
