@@ -51,7 +51,7 @@ $('.datepicker').pickadate({
         const date = $('#datepicker-id').val();
         const urlParams = new URLSearchParams(window.location.search);
         if(date !== "" && pDate !== date){
-            location.href = `/api?date=${date}&pageNo=1&chartNo=${urlParams.get('chartNo')}`;
+            location.href = `/api/transactions?date=${date}&pageNo=1&chartNo=${urlParams.get('chartNo')}`;
         }
     },
 });

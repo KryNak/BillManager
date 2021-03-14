@@ -69,17 +69,3 @@ function formatDate(date) {
     return `${year}-${month}-${day}`
 }
 
-function nextChartNo(){
-    const pathname = window.location.pathname;
-    const urlParams = new URLSearchParams(window.location.search);
-    urlParams.set("chartNo", +urlParams.get("chartNo") + 1);
-    window.location.href = `${pathname}?${urlParams.toString()}#c2`
-}
-
-function prevChartNo(){
-    const pathname = window.location.pathname;
-    const urlParams = new URLSearchParams(window.location.search);
-    urlParams.set("chartNo", +urlParams.get("chartNo") - 1);
-    window.location.href = `${pathname}?${urlParams.toString()}#c2`;
-}
-

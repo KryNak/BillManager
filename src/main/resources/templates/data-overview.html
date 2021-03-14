@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Overview</title>
+    <link rel="stylesheet" th:href="@{/css/materialize.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/data-overview.css}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">MIBI</a>
+            <a href="#" data-activates="mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile-l" class="left hide-on-med-and-down">
+                <li><a onclick="proceedToTransactions()">Transactions</a></li>
+                <li class="active"><a onclick="proceedToOverview()">Overview</a></li>
+            </ul>
+            <ul id="nav-mobile-r" class="right hide-on-med-and-down">
+                <li><a class="dropdown-button" th:href="@{/api/transactions}" data-activates="dropdown1">[[${name}]]<i class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+        </div>
+
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="#!">Settings</a></li>
+            <li><a href="#!">Profile</a></li>
+            <li class="divider"></li>
+            <li><a th:href="@{/logout}">Logout<i class="material-icons right">power_settings_new</i></a></li>
+        </ul>
+
+        <ul class="side-nav" id="mobile">
+            <li><a href="#">Transactions</a></li>
+            <li><a href="#">Overview</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Logout<i class="material-icons right">power_settings_new</i></a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <div class="card-panel hoverable" id="chartBox">
+        <div id="button-bar">
+            <ul>
+                <li><button class="waves-effect waves-light blue btn" onclick="prevChartNo()"><i class="material-icons left">arrow_back</i>previous</button></li>
+                <li><button class="waves-effect waves-light blue btn" onclick="nextChartNo()"><i class="material-icons right">arrow_forward</i>next</button></li>
+            </ul>
+
+            <div id="period-select-container">
+                <select onchange="proceedOnChange()" id="period-select" class="browser-default">
+                    <!--option value="" disabled selected>Choose time period</option-->
+                    <option value="1">Day</option>
+                    <option value="2">Week</option>
+                    <option value="3">Month</option>
+                    <option value="4">Year</option>
+                </select>
+            </div>
+        </div>
+        <div id="chartContainer"></div>
+    </div>
+</main>
+<footer class="page-footer">
+    <div class="row">
+        <div class="col s12 center-align">© 2020 Copyright MIBI</div>
+    </div>
+</footer>
+<script th:src="@{/js/materialize.js}"></script>
+<script th:src="@{/js/data-overview.js}"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script th:inline="javascript">
+    google.charts.load("visualization", "1", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([[${chartData}]]);
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0, 1,
+            { calc: "stringify",
+                sourceColumn: 1,
+                type: "string",
+                role: "annotation" },
+            2]);
+
+        var options = {
+            title: `${[[${label}]]} balance: [${[[${chartRange}]]}]`,
+            bar: {groupWidth: "95%"},
+            legend: { position: "none" },
+            animation:{
+                startup: true,
+                duration: 2000,
+                easing: 'out', },
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById("chartContainer"));
+        chart.draw(view, options);
+    }
+
+    $(window).resize(function(){
+        drawChart();
+    });
+
+    function proceedToTransactions(){
+        location.href = [[${transactionsLink}]];
+    }
+
+    function proceedToOverview(){
+        location.href = `${location.pathname}${location.search}`
+    }
+</script>
+</body>
+</html>

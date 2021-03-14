@@ -37,7 +37,11 @@ public class BillService {
     }
 
     public Double findSumByEmailAndDate(User user, LocalDate date){
-        return billRepository.findSumByEmailAndDate(user.getEmail(), date);
+        return billRepository.findSumByUserAndDate(user.getEmail(), date);
+    }
+
+    public Double findMonthSumByEmailAndDateBetween(String email, LocalDate startDate, LocalDate endDate){
+        return billRepository.findMonthSumByEmailAndDateBetween(email, startDate, endDate);
     }
 
 }

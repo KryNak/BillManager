@@ -17,5 +17,8 @@ public interface BillRepository extends CrudRepository<Bill, Long> {
     Page<Bill> findBillsByDateAndUser(LocalDate date, User user, Pageable pageable);
 
     @Query(value = "SELECT SUM(b.price) FROM Bill b INNER JOIN b.user u WHERE u.email = :email AND b.date = :date")
-    Double findSumByEmailAndDate(@Param(value = "email") String email, @Param(value = "date") LocalDate date);
+    Double findSumByUserAndDate(@Param(value = "email") String email, @Param(value = "date") LocalDate date);
+
+    @Query(value = "SELECT SUM(b.price) FROM Bill b INNER JOIN b.user u WHERE u.email = :email AND b.date BETWEEN :startDate AND :endDate")
+    Double findMonthSumByEmailAndDateBetween(@Param(value = "email") String email, @Param(value = "startDate") LocalDate startDate, @Param(value = "endDate") LocalDate endDate);
 }

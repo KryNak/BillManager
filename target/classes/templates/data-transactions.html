@@ -15,11 +15,11 @@
             <a href="#" class="brand-logo center">MIBI</a>
             <a href="#" data-activates="mobile" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile-l" class="left hide-on-med-and-down">
-                <li class="active"><a href="#">Transactions</a></li>
-                <li><a href="#">Overview</a></li>
+                <li onclick="proceedToTransactions()" class="active"><a onclick="">Transactions</a></li>
+                <li><a onclick="proceedToOverview()">Overview</a></li>
             </ul>
             <ul id="nav-mobile-r" class="right hide-on-med-and-down">
-                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Krystian Nakielski<i class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">[[${name}]]<i class="material-icons right">arrow_drop_down</i></a></li>
             </ul>
         </div>
 
@@ -80,7 +80,7 @@
                                 </td>
                                 <td>
 
-                                    <a th:href="@{/api/delete(date=${bill.getDate()},id=${bill.getId()},pageNo=${currentPage},chartNo=${currentChartNo})}"
+                                    <a th:href="@{/api/transactions/delete(date=${bill.getDate()},id=${bill.getId()},pageNo=${currentPage})}"
                                        class="btn-floating btn-medium waves-effect waves-light red">
                                         <i class="material-icons">delete</i>
                                     </a>
@@ -102,15 +102,15 @@
                             <li th:if="${currentPage <= 1}" class="disabled"><a><i
                                     class="material-icons">chevron_left</i></a></li>
                             <li th:unless="${currentPage <= 1}" class="waves-effect"><a
-                                    th:href="@{/api(date=${currentDate}, pageNo=${currentPage - 1}, chartNo=${currentChartNo})}"><i
+                                    th:href="@{/api/transactions(date=${currentDate}, pageNo=${currentPage - 1})}"><i
                                     class="material-icons">chevron_left</i></a></li>
                             <li th:each="i: ${#numbers.sequence(1, totalPages)}">
                                 <a class="waves-effect" th:if="${currentPage != i}"
-                                   th:href="@{/api(date=${currentDate}, pageNo=${i}, chartNo=${currentChartNo})}">[[${i}]]</a>
+                                   th:href="@{/api/transactions(date=${currentDate}, pageNo=${i})}">[[${i}]]</a>
                                 <a class="act" th:unless="${currentPage != i}">[[${i}]]</a>
                             </li>
                             <li th:if="${currentPage < totalPages}" class="waves-effect"><a
-                                    th:href="@{/api(date=${currentDate}, pageNo=${currentPage + 1}, chartNo=${currentChartNo})}"><i
+                                    th:href="@{/api/transactions(date=${currentDate}, pageNo=${currentPage + 1})}"><i
                                     class="material-icons">chevron_right</i></a></li>
                             <li th:unless="${currentPage < totalPages}" class="disabled"><a><i class="material-icons">chevron_right</i></a>
                             </li>
@@ -124,7 +124,7 @@
 
                         <!-- ADD -->
                         <form id="add-form" th:method="post"
-                              th:action="@{/api/add(cDate=${currentDate}, pageNo=${currentPage}, chartNo=${currentChartNo})}"></form>
+                              th:action="@{/api/transactions/add(cDate=${currentDate}, pageNo=${currentPage})}"></form>
                         <div id="modal1" class="modal modal-fixed-footer" style="max-width: 800px; max-height: 500px">
                             <div class="modal-content">
 
@@ -163,7 +163,7 @@
 
                         <!-- PUT -->
                         <form id="put-form" th:method="post"
-                              th:action="@{/api/add(cDate=${currentDate}, pageNo=${currentPage}, chartNo=${currentChartNo})}"></form>
+                              th:action="@{/api/transactions/add(cDate=${currentDate}, pageNo=${currentPage})}"></form>
                         <div id="modal2" class="modal modal-fixed-footer" style="max-width: 800px; max-height: 500px">
                             <div class="modal-content">
 
@@ -231,5 +231,14 @@
 </footer>
 <script th:src="@{/js/materialize.js}"></script>
 <script th:src="@{/js/data-transactions.js}"></script>
+<script th:inline="javascript" type="text/javascript">
+    function proceedToTransactions(){
+        location.href = `${location.pathname}${location.search}`
+    }
+
+    function proceedToOverview(){
+        location.href = [[${overviewLink}]];
+    }
+</script>
 </body>
 </html>

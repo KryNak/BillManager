@@ -34,10 +34,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     private UriComponents defaultUri(){
-        return UriComponentsBuilder.fromPath("/api")
+        return UriComponentsBuilder.fromPath("/api/transactions")
                 .queryParam("date", LocalDate.now().toString())
                 .queryParam("pageNo", 1)
-                .queryParam("chartNo", 0)
                 .build();
     }
 

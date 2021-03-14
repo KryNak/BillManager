@@ -2,113 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa59beb9-a709-4cba-ae24-c6cdc3d7a08e" name="Default Changelist" comment="app 0.8v">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_stephenc_jcip_jcip_annotations_1_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_h2database_h2_1_4_193.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_nimbusds_content_type_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_nimbusds_lang_tag_1_4_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_nimbusds_nimbus_jose_jwt_8_19.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_nimbusds_oauth2_oidc_sdk_7_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_jakarta_mail_1_6_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_validation_jakarta_validation_api_2_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_2_0_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_configuration_processor_2_4_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_mail_2_3_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_oauth2_client_2_3_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_oauth2_client_5_3_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_oauth2_core_5_3_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_oauth2_jose_5_3_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_2_8_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/billmanager/components/CustomUrlAuthenticationFailureHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/billmanager/configuration/BillProps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/billmanager/configuration/InputConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/billmanager/configuration/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/billmanager/exceptions/NoEmailAuthenticationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/billmanager/model/ConfirmationToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/billmanager/repository/ConfirmationTokenRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/billmanager/service/CustomOAuth2UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/billmanager/service/CustomOidcUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/billmanager/service/EmailSenderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/billmanager/utilities/PasswordUtilities.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/data-transactions.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/data-transactions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/data-transactions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_flywaydb_flyway_core_6_4_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_postgresql_postgresql_42_2_14.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/billmanager/controller/OverviewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/data-overview.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/data-overview.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/data-overview.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bill-manager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/bill-manager.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/billmanager/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/billmanager/configuration/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/billmanager/BillManagerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/billmanager/BillManagerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/billmanager/controller/DataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/billmanager/controller/DataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/billmanager/controller/DonateController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/billmanager/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/billmanager/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/billmanager/controller/MinorPagesController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/billmanager/controller/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/billmanager/controller/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/billmanager/model/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/billmanager/model/Bill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/billmanager/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/billmanager/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/billmanager/configuration/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/billmanager/configuration/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/billmanager/controller/DataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/billmanager/controller/TransactionsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/billmanager/repository/BillRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/billmanager/repository/BillRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/billmanager/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/billmanager/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/billmanager/security/UserAlreadyExistAuthenticationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/billmanager/exceptions/UserAlreadyExistAuthenticationException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/billmanager/service/BillService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/billmanager/service/BillService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/billmanager/service/MyUserDetailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/billmanager/service/CustomUserDetailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/billmanager/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V1__database_init.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/data.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/data.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/localization.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/localization.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/signup.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/signup.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/localization.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/localization.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/data.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/data.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/donate.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/donate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/features.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/features.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/localization.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/localization.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/privacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/privacy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/registration.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/team.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/team.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/terms.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/terms.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/app/billmanager/AppConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/app/billmanager/BillManagerApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/app/billmanager/BillManagerApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/app/billmanager/controller/DataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/app/billmanager/controller/DataController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/app/billmanager/controller/DonateController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/app/billmanager/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/app/billmanager/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/app/billmanager/controller/MinorPagesController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/app/billmanager/controller/RegistrationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/app/billmanager/controller/RegistrationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/app/billmanager/model/Bill.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/app/billmanager/model/Bill.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/app/billmanager/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/app/billmanager/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/data.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/data-transactions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/data-transactions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/data-transactions.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/data-transactions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/data.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/app/billmanager/configuration/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/app/billmanager/configuration/SecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/app/billmanager/repository/BillRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/app/billmanager/repository/BillRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/app/billmanager/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/app/billmanager/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/app/billmanager/security/UserAlreadyExistAuthenticationException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/app/billmanager/security/UserAlreadyExistAuthenticationException.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/app/billmanager/service/BillService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/app/billmanager/service/BillService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/app/billmanager/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/app/billmanager/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/db/migration/V1__database_init.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/data.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/data.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/localization.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/localization.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/signup.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/signup.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/data-transactions.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/data-transactions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/js/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/localization.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/localization.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/data.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/data.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/donate.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/donate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/features.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/features.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/localization.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/localization.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/privacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/privacy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/team.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/team.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/terms.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/terms.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/data-transactions.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/data-transactions.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -145,11 +58,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -432,7 +345,14 @@
       <workItem from="1615115811094" duration="1949000" />
       <workItem from="1615147800189" duration="1652000" />
       <workItem from="1615208739610" duration="3333000" />
-      <workItem from="1615242553563" duration="1193000" />
+      <workItem from="1615242553563" duration="2313000" />
+      <workItem from="1615318981069" duration="7304000" />
+      <workItem from="1615372328947" duration="2296000" />
+      <workItem from="1615375130259" duration="603000" />
+      <workItem from="1615381864467" duration="1086000" />
+      <workItem from="1615383148651" duration="30000" />
+      <workItem from="1615677109385" duration="5019000" />
+      <workItem from="1615713359879" duration="5453000" />
     </task>
     <task id="LOCAL-00001" summary="app 0.7v">
       <created>1598544924674</created>
